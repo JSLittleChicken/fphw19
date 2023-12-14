@@ -5,4 +5,5 @@ function makeFunc (number1) {
         console.log(`sum(${number2}) = ${result}`);
     }
 }
-makeFunc(3)(5);
+let sum = makeFunc(3);
+sum(5);
