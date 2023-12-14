@@ -1,23 +1,14 @@
-// function makeFunc(number1) {
-//     console.log(`sum(${number1}) = ${number1}`);
-//     return function (number2) {
-//         const result = number1 + number2
-//         console.log(`sum(${number2}) = ${result}`);
-//         return function (number3) {
-//             const resultTwo = result + number3
-//             console.log(`sum(${number3}) = ${resultTwo}`)
-//         }
-//     }
-// }
-
-
-let addNumber = 0;
-function sum(number) {
-    addNumber += number
-    return addNumber
+function makeSum(){
+    let sum = 0;
+    function resultFn(x){
+        sum += x;
+        console.log(sum)
+        return resultFn;
+    }
+    return resultFn
 }
-
-console.log(sum(3));
-console.log(sum(8));
-console.log(sum(20));
+let sum = makeSum()
+sum(3);
+sum(5);
+sum(20);
 
